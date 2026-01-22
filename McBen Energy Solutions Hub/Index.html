@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makumbi Benedicto | Global Energy Leader</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    </head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo-container">
+    <img src="logo.png" alt="McBen Energy Solutions Logo" class="site-logo">
+        </a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="market-ticker">
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+            {
+            "symbols": [
+                {"proName": "FOREXCOM:SPX500", "title": "S&P 500"},
+                {"proName": "AMEX:XLE", "title": "Energy Select Sector"},
+                {"proName": "TVC:UKOIL", "title": "Brent Crude Oil"},
+                {"proName": "TVC:USOIL", "title": "WTI Crude Oil"},
+                {"proName": "NYMEX:NG1!", "title": "Natural Gas"}
+            ],
+            "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": true, "displayMode": "adaptive", "locale": "en"
+            }
+            </script>
+        </div>
+    </div>
+
+    <section class="hero-split">
+        <div class="hero-text-overlay">
+            <h1 class="animate-title">The Pulse of <br><span class="highlight">Ugandan Energy</span></h1>
+            <p class="animate-subtext">Navigating the evolution from traditional fossil fuels to the diversified energy mix of 2026 and beyond.</p>
+            <div class="hero-btns">
+                <a href="#history" class="btn">Explore Heritage</a>
+                <a href="contact.html" class="btn outline">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="history" class="reveal">
+        <h2 class="section-title">The Heritage of Energy</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>1850s - The Birth</h3>
+                <p>The modern era began with the first commercial oil wells, transforming global transportation and lighting.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2006 - Uganda's Discovery</h3>
+                <p>Commercial oil was first confirmed in the Albertine Graben, setting the stage for Uganda’s industrial revolution.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2026 - First Oil</h3>
+                <p>Today marks the landmark year of production, with the EACOP becoming the backbone of East African energy logistics.</p>
+            </div>
+        </div>
+    </section>
+
+    
+<section id="vision-mission" class="reveal">
+    <div class="vision-container">
+        <div class="mission-box">
+            <h2 class="section-title">My <span class="highlight">Mission</span></h2>
+            <p>To leverage first-class technical expertise and localized management strategies to drive Uganda’s energy independence, ensuring that our petroleum resources serve as a catalyst for national industrialization.</p>
+        </div>
+        <div class="vision-box">
+            <h2 class="section-title">My <span class="highlight">Vision</span></h2>
+            <p>To become a pivotal leader in the East African energy transition, bridging the gap between traditional hydrocarbons and the emerging green economy by 2030.</p>
+        </div>
+    </div>
+
+    <div class="ev-enthusiasm reveal">
+        <div class="ev-text">
+            <h2 class="section-title">The EV Revolution: <span class="highlight">A New Frontier</span></h2>
+            <p>While my foundation is in Oil and Gas, my passion lies in the <strong>Global Energy Transition</strong>. I am deeply enthusiastic about the integration of Electric Vehicles (EVs) into the African transport landscape. As we extract our crude, we must simultaneously build the infrastructure for the battery-electric future.</p>
+            <p><em>"The energy of the future is not about one source; it's about the management of all sources."</em></p>
+        </div>
+        <div class="ev-stats">
+            <div class="stat-card">
+                <h3>EV Growth</h3>
+                <p>+35% Annual Projected growth in E-mobility across East Africa by 2028.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="quote-section reveal">
+    <div class="quote-container">
+        <blockquote>
+            "Energy is the golden thread that connects economic growth, social equity, and environmental sustainability."
+        </blockquote>
+        <cite>— Ban Ki-moon</cite>
+    </div>
+</section>
+
+
+    <section class="future-mix reveal">
+        <div class="future-content">
+            <h2 class="section-title">The Future of the Sector</h2>
+            <p>The future is not just "Oil and Gas"; it is **Energy Management**. By 2030, the sector will integrate:</p>
+            <ul class="future-list">
+                <li><strong>Decarbonized Production:</strong> Using AI to minimize the carbon footprint of extraction.</li>
+                <li><strong>Hydrogen Integration:</strong> Repurposing pipelines for green hydrogen transport.</li>
+                <li><strong>Diversified Portfolios:</strong> Oil majors transitioning into total energy providers (Solar, Wind, and Thermal).</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Makumbi Benedicto | Kampala, Uganda | +256 776 090357</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Text Entry
+        gsap.from(".animate-title", { opacity: 0, x: -100, duration: 1.2, ease: "power4.out" });
+        gsap.from(".animate-subtext", { opacity: 0, x: -50, duration: 1.2, delay: 0.3 });
+
+        // Scroll Reveal
+        gsap.utils.toArray(".reveal").forEach(elem => {
+            gsap.from(elem, {
+                scrollTrigger: elem,
+                y: 100,
+                opacity: 0,
+                duration: 1.5,
+                ease: "power2.out"
+            });
+        });
+    </script>
+</body>
+</html>

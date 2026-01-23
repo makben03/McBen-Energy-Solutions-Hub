@@ -52,3 +52,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     rotation: -10,
     ease: "back.out(1.7)"
 });
+
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        // Move your TradingView widget loading code here
+        // This gives the rest of your site a 2-second head start
+    }, 2000);
+});

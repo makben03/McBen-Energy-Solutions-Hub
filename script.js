@@ -62,6 +62,19 @@ window.addEventListener('load', function() {
 });
 
 /* ==========================================
+   NEW: LOGO PATH RECOVERY FIX
+   ========================================== */
+window.addEventListener('DOMContentLoaded', () => {
+    const logo = document.querySelector('.site-logo');
+    if (logo) {
+        logo.onerror = function() {
+            console.log("Logo failed to load at initial path, retrying root...");
+            this.src = '/logo.png'; // Forces the browser to look at the server root
+        };
+    }
+});
+
+/* ==========================================
    NEW: MISSION BRIEF (CONTACT FORM) HANDLER
    ========================================== */
 const contactForm = document.getElementById('contactForm');

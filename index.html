@@ -7,15 +7,39 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    </head>
+    <style>
+        /* Oil Drop Logo Style */
+        .oil-drop-logo {
+            width: 30px;
+            height: 30px;
+            background-color: #BBC200;
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(45deg);
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
 <body>
 
     <nav>
-      <a href="index.html" class="logo-container">
-    <img src="logo.jpg" alt="McBen Energy Solutions" width="180" height="60" class="site-logo">
-</a>
+        <a href="index.html" class="logo-container">
+            <div class="oil-drop-logo"></div>
+            <span>McBen <span style="color:#BBC200">Energy</span></span>
+        </a>
         <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" style="color: #BBC200;">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -73,27 +97,27 @@
 
     
 <section id="vision-mission" class="reveal">
-    <div class="vision-container">
-        <div class="mission-box">
-            <h2 class="section-title">My <span class="highlight">Mission</span></h2>
-            <p>To leverage first-class technical expertise and localized management strategies to drive Uganda’s energy independence, ensuring that our petroleum resources serve as a catalyst for national industrialization.</p>
+    <div class="vision-container" style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <div class="mission-box" style="flex: 1; min-width: 300px; background: #1a1d21; padding: 40px; border-radius: 15px; border-left: 5px solid #BBC200;">
+            <h2 class="section-title" style="color:#fff;">My <span class="highlight">Mission</span></h2>
+            <p style="color:#ced4da;">To leverage first-class technical expertise and localized management strategies to drive Uganda’s energy independence, ensuring that our petroleum resources serve as a catalyst for national industrialization.</p>
         </div>
-        <div class="vision-box">
-            <h2 class="section-title">My <span class="highlight">Vision</span></h2>
-            <p>To become a pivotal leader in the East African energy transition, bridging the gap between traditional hydrocarbons and the emerging green economy by 2030.</p>
+        <div class="vision-box" style="flex: 1; min-width: 300px; background: #1a1d21; padding: 40px; border-radius: 15px; border-left: 5px solid #BBC200;">
+            <h2 class="section-title" style="color:#fff;">My <span class="highlight">Vision</span></h2>
+            <p style="color:#ced4da;">To become a pivotal leader in the East African energy transition, bridging the gap between traditional hydrocarbons and the emerging green economy by 2030.</p>
         </div>
     </div>
 
-    <div class="ev-enthusiasm reveal">
+    <div class="ev-enthusiasm reveal" style="margin-top: 50px; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px;">
         <div class="ev-text">
             <h2 class="section-title">The EV Revolution: <span class="highlight">A New Frontier</span></h2>
-            <p>While my foundation is in Oil and Gas, my passion lies in the <strong>Global Energy Transition</strong>. I am deeply enthusiastic about the integration of Electric Vehicles (EVs) into the African transport landscape. As we extract our crude, we must simultaneously build the infrastructure for the battery-electric future.</p>
+            <p>While my foundation is in Oil and Gas, my passion lies in the <strong>Global Energy Transition</strong>. I am deeply enthusiastic about the integration of Electric Vehicles (EVs) into the African transport landscape.</p>
             <p><em>"The energy of the future is not about one source; it's about the management of all sources."</em></p>
         </div>
-        <div class="ev-stats">
-            <div class="stat-card">
-                <h3>EV Growth</h3>
-                <p>+35% Annual Projected growth in E-mobility across East Africa by 2028.</p>
+        <div class="ev-stats" style="margin-top: 20px;">
+            <div class="stat-card" style="background: #BBC200; color: #000; padding: 20px; border-radius: 10px; display: inline-block;">
+                <h3 style="margin: 0;">EV Growth</h3>
+                <p style="margin: 5px 0 0 0; font-weight: bold;">+35% Annual Projected growth by 2028.</p>
             </div>
         </div>
     </div>
@@ -101,10 +125,10 @@
 
 <section class="quote-section reveal">
     <div class="quote-container">
-        <blockquote>
+        <blockquote style="font-size: 1.5rem; border-left: 5px solid #BBC200; padding-left: 20px;">
             "Energy is the golden thread that connects economic growth, social equity, and environmental sustainability."
         </blockquote>
-        <cite>— Ban Ki-moon</cite>
+        <cite style="display: block; margin-top: 10px; color: #BBC200;">— Ban Ki-moon</cite>
     </div>
 </section>
 
@@ -113,10 +137,10 @@
         <div class="future-content">
             <h2 class="section-title">The Future of the Sector</h2>
             <p>The future is not just "Oil and Gas"; it is **Energy Management**. By 2030, the sector will integrate:</p>
-            <ul class="future-list">
-                <li><strong>Decarbonized Production:</strong> Using AI to minimize the carbon footprint of extraction.</li>
-                <li><strong>Hydrogen Integration:</strong> Repurposing pipelines for green hydrogen transport.</li>
-                <li><strong>Diversified Portfolios:</strong> Oil majors transitioning into total energy providers (Solar, Wind, and Thermal).</li>
+            <ul class="future-list" style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 15px;"><strong style="color: #BBC200;">Decarbonized Production:</strong> Using AI to minimize the carbon footprint of extraction.</li>
+                <li style="margin-bottom: 15px;"><strong style="color: #BBC200;">Hydrogen Integration:</strong> Repurposing pipelines for green hydrogen transport.</li>
+                <li style="margin-bottom: 15px;"><strong style="color: #BBC200;">Diversified Portfolios:</strong> Transitioning into total energy providers.</li>
             </ul>
         </div>
     </section>
@@ -146,12 +170,5 @@
             });
         });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </body>
-
 </html>
-
-
-
-
-

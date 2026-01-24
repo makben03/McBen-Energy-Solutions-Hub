@@ -44,7 +44,7 @@
             </div>
 
             <div class="panel-form">
-                <form action="contact.php" method="POST">
+                <form id="contactForm">
                     <div class="field">
                         <input type="text" name="name" required>
                         <span class="label">IDENTIFICATION (NAME)</span>
@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="field">
-                        <textarea name="message" required rows="4"></textarea>
+                        <input type="textarea" name="message" required style="width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); color: white; padding: 10px 0; outline: none;"></input>
                         <span class="label">MISSION BRIEF (MESSAGE)</span>
                     </div>
 
@@ -65,12 +65,50 @@
                         <div class="glow-effect"></div>
                     </button>
                 </form>
+                <div id="formStatus" style="margin-top: 15px; font-size: 0.8rem; font-family: 'Oswald'; text-transform: uppercase;"></div>
             </div>
 
         </div>
     </section>
 
     <footer>&copy; 2026 Makumbi Benedicto | Global Energy Strategy</footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const statusDiv = document.getElementById('formStatus');
+            statusDiv.style.color = "#BBC200";
+            statusDiv.innerText = "TRANSMITTING DATA...";
+
+            const formData = {
+                name: e.target.name.value,
+                email: e.target.email.value,
+                message: e.target.message.value
+            };
+
+            try {
+                // Pointing to your live Render backend
+                const response = await fetch('https://mcben-energy-solutions-hub.onrender.com/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    statusDiv.style.color = "#00FF00";
+                    statusDiv.innerText = "MISSION BRIEF RECEIVED SUCCESSFULLY.";
+                    e.target.reset(); // Clear the form
+                } else {
+                    throw new Error();
+                }
+            } catch (error) {
+                statusDiv.style.color = "#FF4B4B";
+                statusDiv.innerText = "TRANSMISSION ERROR. PLEASE CHECK CONNECTION.";
+            }
+        });
+    </script>
 
 </body>
 </html>

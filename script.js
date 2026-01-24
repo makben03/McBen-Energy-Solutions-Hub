@@ -59,3 +59,23 @@ window.addEventListener('load', function() {
         // This gives the rest of your site a 2-second head start
     }, 2000);
 });
+
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Stop the page from reloading
+    
+    const formData = {
+        name: e.target.name.value,
+        email: e.target.email.value,
+        message: e.target.message.value
+    };
+
+    // Replace with your actual Render URL
+    const response = await fetch('https://mcben-energy-solutions-hub.onrender.com/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+    alert(result.message); // "Message received at McBen Energy Hub!"
+});

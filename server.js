@@ -1,23 +1,16 @@
 const express = require('express');
-const app = express();
 const path = require('path');
-const PORT = process.env.PORT || 10000;
+const app = express();
+const PORT = process.env.PORT || 10000; // Render uses port 10000 by default
 
-// Serve your static website files (HTML, CSS, Images)
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public'))); // Assumes your HTML/CSS is in a 'public' folder
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-// A simple API route for your Contact Form
 app.post('/api/contact', (req, res) => {
-    // This is where you would send emails or save to a database
-    console.log("Mission Brief Received!");
-    res.json({ status: "Success", message: "Transmission Received by McBen Energy." });
+    console.log("Contact form data:", req.body);
+    res.status(200).send({ message: "Message received at McBen Energy Hub!" });
 });
 
 app.listen(PORT, () => {
-    console.log(`McBen Server is running on port ${PORT}`);
-
+    console.log(`Server active on port ${PORT}`);
 });

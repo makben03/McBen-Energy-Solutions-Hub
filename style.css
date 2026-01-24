@@ -6,9 +6,10 @@
     --primary-gold: #FFB400;      /* Energy/Oil Gold */
     --deep-black: #0A0F14;        /* Crude Black */
     --slate-grey: #1C252E;        /* Industrial Slate */
+    --industrial-charcoal: #1C252E; /* NEW: Content Text Color */
     --glass-bg: rgba(255, 255, 255, 0.05);
     --white: #FFFFFF;
-    --text-muted: #A0AAB2;
+    --text-muted: #555555;        /* Darkened for visibility on white */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -19,14 +20,14 @@
 }
 
 body {
-    background-color: var(--white); /* Changed to White for high visibility */
-    color: var(--deep-black);       /* Changed to Dark for readability */
+    background-color: var(--white); /* White for high visibility */
+    color: var(--industrial-charcoal); /* Industrial charcoal for middle-section readability */
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* --- NAVIGATION --- */
+/* --- NAVIGATION --- (STAYS DARK) */
 nav {
     display: flex;
     justify-content: space-between;
@@ -48,19 +49,18 @@ nav {
 }
 
 .site-logo {
-    height: 60px; /* Adjust this height to fit your nav bar */
-    width: auto;  /* Maintains aspect ratio */
+    height: 60px; 
+    width: auto;  
     transition: transform 0.3s ease;
     filter: drop-shadow(0 0 5px rgba(255, 180, 0, 0.2));
 }
 
 .site-logo:hover {
-    transform: scale(1.05); /* Slight grow effect on hover */
+    transform: scale(1.05);
 }
 
-/* Ensure Nav adjusts for the image height */
 nav {
-    padding: 10px 8%; /* Reduced padding for a sleeker look */
+    padding: 10px 8%; 
 }
 
 nav ul {
@@ -70,7 +70,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: var(--white);
+    color: var(--white); /* White text for dark nav */
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
@@ -117,6 +117,7 @@ h2.section-title {
     margin-bottom: 40px;
     border-left: 5px solid var(--primary-gold);
     padding-left: 20px;
+    color: var(--industrial-charcoal); /* Updated for middle section */
 }
 
 .highlight { color: var(--primary-gold); }
@@ -124,7 +125,7 @@ h2.section-title {
 /* --- SERVICES TILE GRID --- */
 .services-tile-section {
     padding: 60px 8%;
-    background: #0a0f14;
+    background: var(--white); /* Continuity with white theme */
 }
 
 .tile-grid {
@@ -135,10 +136,10 @@ h2.section-title {
 }
 
 .service-tile {
-    background: #1c252e;
+    background: #F4F7F9; /* Light architectural grey */
     padding: 40px 30px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 180, 0, 0.1);
+    border: 1px solid rgba(28, 37, 46, 0.1);
     text-align: center;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
@@ -153,7 +154,7 @@ h2.section-title {
     transform: translateY(-10px) rotateX(5deg);
     border-color: var(--primary-gold);
     box-shadow: 0 15px 35px rgba(255, 180, 0, 0.15);
-    background: #252f3a;
+    background: var(--white);
 }
 
 .tile-icon {
@@ -164,7 +165,7 @@ h2.section-title {
 
 .service-tile h3 {
     font-family: 'Oswald', sans-serif;
-    color: var(--primary-gold);
+    color: var(--industrial-charcoal);
     font-size: 1.3rem;
     margin-bottom: 15px;
     text-transform: uppercase;
@@ -173,11 +174,10 @@ h2.section-title {
 
 .service-tile p {
     font-size: 0.9rem;
-    color: #a0aab2;
+    color: var(--text-muted);
     line-height: 1.5;
 }
 
-/* Subtle background glow effect for tiles */
 .service-tile::after {
     content: '';
     position: absolute;
@@ -196,7 +196,7 @@ h2.section-title {
 
 /* CONTACT PAGE SPECIFIC - ULTRA MODERN */
 .contact-page-bg {
-    background: #FFFFFF; /* High contrast for outdoors */
+    background: #FFFFFF;
     min-height: 100vh;
 }
 
@@ -212,10 +212,9 @@ h2.section-title {
     padding: 20px 5%;
 }
 
-/* Glassmorphism Card */
 .glass-form-card {
     background: rgba(255, 255, 255, 1);
-    border: 2px solid var(--deep-black);
+    border: 2px solid var(--industrial-charcoal);
     border-radius: 24px;
     padding: 50px;
     width: 100%;
@@ -223,7 +222,6 @@ h2.section-title {
     box-shadow: 10px 10px 0px var(--primary-gold);
 }
 
-/* Floating Input Design */
 .input-container {
     position: relative;
     margin-bottom: 35px;
@@ -235,9 +233,9 @@ h2.section-title {
     width: 100%;
     background: transparent;
     border: none;
-    border-bottom: 1px solid var(--deep-black);
+    border-bottom: 1px solid var(--industrial-charcoal);
     padding: 10px 0;
-    color: #000;
+    color: var(--industrial-charcoal);
     font-size: 1rem;
     outline: none;
     transition: 0.3s;
@@ -247,12 +245,11 @@ h2.section-title {
     position: absolute;
     left: 0;
     top: 10px;
-    color: rgba(0,0,0,0.5);
+    color: rgba(28, 37, 46, 0.6);
     pointer-events: none;
     transition: 0.3s ease all;
 }
 
-/* Float label on focus or content */
 .input-container input:focus ~ label,
 .input-container input:not(:placeholder-shown) ~ label,
 .input-container textarea:focus ~ label,
@@ -277,7 +274,6 @@ h2.section-title {
     width: 100%;
 }
 
-/* Modern Send Button - Liquid Gold Pulse */
 .pulse-btn {
     position: relative;
     width: 100%;
@@ -347,7 +343,7 @@ h2.section-title {
 /* HERO UPDATES */
 .hero-split {
     height: 90vh;
-    background: linear-gradient(90deg, rgba(10,15,20,1) 30%, rgba(10,15,20,0.2) 100%), 
+    background: linear-gradient(90deg, rgba(255,255,255,0.95) 30%, rgba(255,255,255,0.4) 100%), 
                 url('https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&q=80&w=2070');
     background-size: cover;
     display: flex;
@@ -355,10 +351,14 @@ h2.section-title {
     padding: 0 10%;
 }
 
+.hero-text-overlay h1, .hero-text-overlay p {
+    color: var(--industrial-charcoal);
+}
+
 .btn.outline {
     background: transparent;
     border: 2px solid var(--primary-gold);
-    color: var(--primary-gold);
+    color: var(--industrial-charcoal);
     margin-left: 15px;
 }
 
@@ -372,7 +372,11 @@ h2.section-title {
 .timeline-item {
     margin-bottom: 50px;
     position: relative;
+    color: var(--industrial-charcoal);
 }
+
+.timeline-item h3 { color: var(--industrial-charcoal); }
+.timeline-item p { color: var(--text-muted); }
 
 .timeline-item::before {
     content: '';
@@ -388,10 +392,11 @@ h2.section-title {
 
 /* FUTURE SECTION */
 .future-mix {
-    background: var(--slate-grey);
+    background: #F4F7F9;
     border-radius: 20px;
     margin: 100px 10%;
     padding: 60px;
+    color: var(--industrial-charcoal);
 }
 
 .future-list {
@@ -403,6 +408,7 @@ h2.section-title {
     margin-bottom: 20px;
     padding-left: 30px;
     position: relative;
+    color: var(--industrial-charcoal);
 }
 
 .future-list li::before {
@@ -422,24 +428,26 @@ h2.section-title {
 }
 
 .mission-box, .vision-box {
-    background: linear-gradient(145deg, #1c252e, #0a0f14);
+    background: #F4F7F9;
     padding: 40px;
     border-radius: 15px;
     border-top: 3px solid var(--primary-gold);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    color: var(--industrial-charcoal);
 }
 
 /* EV SECTION - LIVELY & GLOWING */
 .ev-enthusiasm {
-    background: linear-gradient(rgba(10, 15, 20, 0.9), rgba(10, 15, 20, 0.9)), 
-                url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2072'); /* EV Charging Image */
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                url('https://images.unsplash.com/photo-1593941707882-a5bba14938c7?q=80&w=2072'); 
     background-size: cover;
     padding: 60px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     gap: 40px;
-    border: 1px solid rgba(0, 255, 150, 0.2); /* Subtle Green Glow */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--industrial-charcoal);
 }
 
 .ev-text { flex: 2; }
@@ -451,20 +459,21 @@ h2.section-title {
     border-radius: 15px;
     border: 1px solid var(--primary-gold);
     text-align: center;
+    color: var(--industrial-charcoal);
 }
 
 /* QUOTE SECTION */
 .quote-section {
     text-align: center;
     padding: 100px 15%;
-    background: #000;
+    background: #F9F9F9;
 }
 
 .quote-container blockquote {
     font-family: 'Oswald', sans-serif;
     font-size: 2.2rem;
     line-height: 1.3;
-    color: var(--white);
+    color: var(--industrial-charcoal);
     margin-bottom: 20px;
     font-style: italic;
 }
@@ -477,17 +486,9 @@ h2.section-title {
     letter-spacing: 2px;
 }
 
-/* Responsive Fix */
-@media (max-width: 768px) {
-    .vision-container, .ev-enthusiasm {
-        grid-template-columns: 1fr;
-        flex-direction: column;
-    }
-}
-
 /* --- INDUSTRIAL DASHBOARD DESIGN --- */
 .industrial-bg {
-    background: #FFFFFF; /* High contrast white */
+    background: #FFFFFF;
     background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
     background-size: 30px 30px;
     min-height: 100vh;
@@ -503,7 +504,7 @@ h2.section-title {
 .glass-dashboard {
     background: #FFFFFF;
     backdrop-filter: none;
-    border: 2px solid #000;
+    border: 2px solid var(--industrial-charcoal);
     border-radius: 40px;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -513,11 +514,10 @@ h2.section-title {
     box-shadow: 10px 10px 0px var(--primary-gold);
 }
 
-/* Left Side Panel */
 .panel-info {
     background: #F9F9F9;
     padding: 60px;
-    border-right: 1px solid #000;
+    border-right: 1px solid var(--industrial-charcoal);
 }
 
 .dash-title {
@@ -525,7 +525,7 @@ h2.section-title {
     font-size: 2.5rem;
     line-height: 1;
     margin-bottom: 20px;
-    color: #000;
+    color: var(--industrial-charcoal);
 }
 
 .status-indicator {
@@ -549,9 +549,8 @@ h2.section-title {
 
 .info-block { margin-bottom: 30px; }
 .info-block label { font-size: 0.7rem; color: var(--primary-gold); letter-spacing: 2px; display: block; margin-bottom: 5px; }
-.info-block p { font-size: 1.1rem; color: #000; opacity: 1; }
+.info-block p { font-size: 1.1rem; color: var(--industrial-charcoal); opacity: 1; }
 
-/* Right Side Form */
 .panel-form { padding: 60px; }
 
 .field { position: relative; margin-bottom: 40px; }
@@ -559,10 +558,10 @@ h2.section-title {
 .field input, .field textarea {
     width: 100%;
     background: #F9F9F9;
-    border: 1px solid #000;
+    border: 1px solid var(--industrial-charcoal);
     border-radius: 12px;
     padding: 20px;
-    color: #000;
+    color: var(--industrial-charcoal);
     font-family: inherit;
     transition: 0.3s;
 }
@@ -584,7 +583,6 @@ h2.section-title {
     outline: none;
 }
 
-/* Command Button */
 .command-btn {
     width: 100%;
     padding: 25px;
@@ -606,6 +604,19 @@ h2.section-title {
     box-shadow: 0 0 40px rgba(255, 180, 0, 0.4);
 }
 
+/* --- FOOTER --- (STAYS DARK) */
+footer {
+    background: var(--deep-black);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 180, 0, 0.1);
+}
+
+footer p {
+    color: var(--white);
+}
+
 @keyframes pulse {
     0% { transform: scale(1); opacity: 1; }
     50% { transform: scale(1.5); opacity: 0.5; }
@@ -614,5 +625,12 @@ h2.section-title {
 
 @media (max-width: 850px) {
     .glass-dashboard { grid-template-columns: 1fr; }
-    .panel-info { border-right: none; border-bottom: 1px solid #000; }
+    .panel-info { border-right: none; border-bottom: 1px solid var(--industrial-charcoal); }
+}
+
+@media (max-width: 768px) {
+    .vision-container, .ev-enthusiasm {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
 }

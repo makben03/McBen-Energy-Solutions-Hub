@@ -1,0 +1,12 @@
+{
+  "name": "mcben-energy-solutions-hub",
+  "version": "1.0.0",
+  "description": "Backend for McBen Energy Solutions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

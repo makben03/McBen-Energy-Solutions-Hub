@@ -1,26 +1,29 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-
-// Render provides the PORT, or we use 10000 as a backup
 const PORT = process.env.PORT || 10000;
 
+// Allow the server to read JSON data
 app.use(express.json());
 
-// 1. Tell the server to serve all files (CSS, Images, JS) from the root folder
-app.use(express.static(__dirname));
+// FORCE the server to serve all files in the main folder (images, css, js)
+app.use(express.static(path.join(__dirname))); 
 
-// 2. Tell the server to specifically show index.html when people visit the main URL
+// Route for the Home Page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// 3. Your Contact API for the form to talk to
+// Route for the Contact Page (fixes your contact.html link)
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'contact.html'));
+});
+
+// API for the Contact Form
 app.post('/api/contact', (req, res) => {
-    console.log("Mission Brief Received:", req.body);
-    res.status(200).json({ message: "MESSAGE RECEIVED BY MCBEN ENERGY HUB" });
+    res.json({ status: "Success", message: "Transmission Received." });
 });
 
 app.listen(PORT, () => {
-    console.log(`McBen Energy Server live on port ${PORT}`);
+    console.log(`McBen Server live on port ${PORT}`);
 });

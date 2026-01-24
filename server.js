@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 // Serve your static website files (HTML, CSS, Images)
 app.use(express.static(path.join(__dirname, 'public')));
@@ -19,4 +19,5 @@ app.post('/api/contact', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`McBen Server is running on port ${PORT}`);
+
 });

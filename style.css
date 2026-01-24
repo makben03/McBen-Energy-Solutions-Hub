@@ -707,3 +707,27 @@ footer p {
 }
 
 .back-nav:hover { color: var(--primary-gold); }
+
+/* DESIGN UPDATES FOR SUB-PAGES */
+.industrial-bg main {
+    background: #ffffff;
+    padding-top: 40px;
+}
+
+.mission-box h2, .vision-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-gold);
+    padding-left: 15px;
+}
+
+/* Ensure the future-mix box stands out on the white page */
+.future-mix {
+    background: var(--slate-grey);
+    color: var(--white);
+    box-shadow: 15px 15px 0px var(--primary-gold);
+}
+
+.future-mix .btn {
+    margin-top: 20px;
+}

@@ -98,7 +98,7 @@
                 if (response.ok) {
                     const result = await response.json();
                     statusDiv.style.color = "#00FF00";
-                    statusDiv.innerText = "MISSION BRIEF RECEIVED SUCCESSFULLY.";
+                    statusDiv.innerText = "MESSAGE SENT SUCCESSFULLY.";
                     e.target.reset(); // Clear the form
                 } else {
                     throw new Error();
@@ -112,3 +112,4 @@
 
 </body>
 </html>
+

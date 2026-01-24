@@ -19,8 +19,8 @@
 }
 
 body {
-    background-color: var(--deep-black);
-    color: var(--white);
+    background-color: var(--white); /* Changed to White for high visibility */
+    color: var(--deep-black);       /* Changed to Dark for readability */
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
@@ -196,7 +196,7 @@ h2.section-title {
 
 /* CONTACT PAGE SPECIFIC - ULTRA MODERN */
 .contact-page-bg {
-    background: radial-gradient(circle at top right, #1c252e, #0a0f14);
+    background: #FFFFFF; /* High contrast for outdoors */
     min-height: 100vh;
 }
 
@@ -214,15 +214,13 @@ h2.section-title {
 
 /* Glassmorphism Card */
 .glass-form-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 180, 0, 0.2);
+    background: rgba(255, 255, 255, 1);
+    border: 2px solid var(--deep-black);
     border-radius: 24px;
     padding: 50px;
     width: 100%;
     max-width: 600px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    box-shadow: 10px 10px 0px var(--primary-gold);
 }
 
 /* Floating Input Design */
@@ -237,9 +235,9 @@ h2.section-title {
     width: 100%;
     background: transparent;
     border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid var(--deep-black);
     padding: 10px 0;
-    color: #fff;
+    color: #000;
     font-size: 1rem;
     outline: none;
     transition: 0.3s;
@@ -249,7 +247,7 @@ h2.section-title {
     position: absolute;
     left: 0;
     top: 10px;
-    color: rgba(255,255,255,0.5);
+    color: rgba(0,0,0,0.5);
     pointer-events: none;
     transition: 0.3s ease all;
 }
@@ -489,8 +487,9 @@ h2.section-title {
 
 /* --- INDUSTRIAL DASHBOARD DESIGN --- */
 .industrial-bg {
-    background: #05080a;
-    background-image: radial-gradient(circle at 50% 50%, #0a141a 0%, #05080a 100%);
+    background: #FFFFFF; /* High contrast white */
+    background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+    background-size: 30px 30px;
     min-height: 100vh;
 }
 
@@ -502,23 +501,23 @@ h2.section-title {
 }
 
 .glass-dashboard {
-    background: rgba(16, 22, 28, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 180, 0, 0.15);
+    background: #FFFFFF;
+    backdrop-filter: none;
+    border: 2px solid #000;
     border-radius: 40px;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     width: 100%;
     max-width: 1000px;
     overflow: hidden;
-    box-shadow: 0 50px 100px rgba(0,0,0,0.8), inset 0 0 40px rgba(255, 180, 0, 0.05);
+    box-shadow: 10px 10px 0px var(--primary-gold);
 }
 
 /* Left Side Panel */
 .panel-info {
-    background: rgba(255, 180, 0, 0.03);
+    background: #F9F9F9;
     padding: 60px;
-    border-right: 1px solid rgba(255, 180, 0, 0.1);
+    border-right: 1px solid #000;
 }
 
 .dash-title {
@@ -526,6 +525,7 @@ h2.section-title {
     font-size: 2.5rem;
     line-height: 1;
     margin-bottom: 20px;
+    color: #000;
 }
 
 .status-indicator {
@@ -549,7 +549,7 @@ h2.section-title {
 
 .info-block { margin-bottom: 30px; }
 .info-block label { font-size: 0.7rem; color: var(--primary-gold); letter-spacing: 2px; display: block; margin-bottom: 5px; }
-.info-block p { font-size: 1.1rem; color: #fff; opacity: 0.8; }
+.info-block p { font-size: 1.1rem; color: #000; opacity: 1; }
 
 /* Right Side Form */
 .panel-form { padding: 60px; }
@@ -558,11 +558,11 @@ h2.section-title {
 
 .field input, .field textarea {
     width: 100%;
-    background: rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: #F9F9F9;
+    border: 1px solid #000;
     border-radius: 12px;
     padding: 20px;
-    color: #fff;
+    color: #000;
     font-family: inherit;
     transition: 0.3s;
 }
@@ -571,7 +571,7 @@ h2.section-title {
     position: absolute;
     left: 20px;
     top: -10px;
-    background: #10161c;
+    background: #FFF;
     padding: 0 10px;
     font-size: 0.65rem;
     color: var(--primary-gold);
@@ -588,8 +588,8 @@ h2.section-title {
 .command-btn {
     width: 100%;
     padding: 25px;
-    background: transparent;
-    border: 2px solid var(--primary-gold);
+    background: #000;
+    border: none;
     color: var(--primary-gold);
     font-family: 'Oswald', sans-serif;
     font-size: 1.2rem;
@@ -614,66 +614,5 @@ h2.section-title {
 
 @media (max-width: 850px) {
     .glass-dashboard { grid-template-columns: 1fr; }
-    .panel-info { border-right: none; border-bottom: 1px solid rgba(255, 180, 0, 0.1); }
-}
-
-/* ==========================================================
-   NEW: OUTDOOR FIELD MODE (HIGH CONTRAST OVERRIDES)
-   Ensures visibility in direct sunlight while keeping a modern architectural look.
-   ========================================================== */
-
-/* Overriding the dark background for high contrast */
-.industrial-bg.field-mode {
-    background-color: #FFFFFF !important;
-    background-image: radial-gradient(#d1d1d1 1px, transparent 1px) !important;
-    background-size: 30px 30px !important;
-}
-
-/* Enhancing the dashboard card for field use */
-.field-mode .glass-dashboard {
-    background: #FFFFFF !important;
-    border: 3px solid #121212 !important;
-    box-shadow: 15px 15px 0px var(--primary-gold) !important;
-    backdrop-filter: none !important;
-}
-
-/* Making all text deep black for sunlight readability */
-.field-mode .dash-title, 
-.field-mode .info-block p,
-.field-mode .field input,
-.field-mode .field textarea {
-    color: #121212 !important;
-    opacity: 1 !important;
-}
-
-.field-mode .info-block label,
-.field-mode .field .label {
-    color: #444 !important;
-    font-weight: 800;
-    background: #FFFFFF !important;
-}
-
-/* High contrast inputs */
-.field-mode .field input, 
-.field-mode .field textarea {
-    background: #F9F9F9 !important;
-    border: 2px solid #121212 !important;
-}
-
-/* High contrast command button */
-.field-mode .command-btn {
-    background: #121212 !important;
-    color: var(--primary-gold) !important;
-    border: none !important;
-}
-
-.field-mode .command-btn:hover {
-    background: var(--primary-gold) !important;
-    color: #121212 !important;
-}
-
-/* Fix for nav in field mode */
-.field-mode nav {
-    background: #121212 !important;
-    border-bottom: 3px solid var(--primary-gold) !important;
+    .panel-info { border-right: none; border-bottom: 1px solid #000; }
 }

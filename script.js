@@ -31,21 +31,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-//document.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
+// Intersection Observer for Section Visibility
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
     });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
 });
 
-//gsap.from(".site-logo", {
+// Site Logo Animation
+gsap.from(".site-logo", {
     duration: 1.5,
     opacity: 0,
     scale: 0.5,
@@ -53,6 +53,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     ease: "back.out(1.7)"
 });
 
+// Widget Delayed Loading
 window.addEventListener('load', function() {
     setTimeout(function() {
         // Move your TradingView widget loading code here
@@ -60,22 +61,40 @@ window.addEventListener('load', function() {
     }, 2000);
 });
 
-document.getElementById('contactForm').addEventListener('submit', async (e) => {
-    e.preventDefault(); // Stop the page from reloading
-    
-    const formData = {
-        name: e.target.name.value,
-        email: e.target.email.value,
-        message: e.target.message.value
-    };
+/* ==========================================
+   NEW: MISSION BRIEF (CONTACT FORM) HANDLER
+   ========================================== */
+const contactForm = document.getElementById('contactForm');
 
-    // Replace with your actual Render URL
-    const response = await fetch('https://mcben-energy-solutions-hub.onrender.com/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+// We check if the form exists on the current page (contact.html)
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Stop the page from reloading
+        
+        const formData = {
+            name: e.target.name.value,
+            email: e.target.email.value,
+            message: e.target.message.value
+        };
+
+        try {
+            // Pointing to your live Render backend
+            const response = await fetch('https://mcben-energy-solutions-hub.onrender.com/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                alert("MISSION BRIEF RECEIVED: " + result.message);
+                e.target.reset(); // Clear form fields
+            } else {
+                alert("TRANSMISSION FAILED. SERVER RESPONDED WITH AN ERROR.");
+            }
+        } catch (error) {
+            console.error("Fetch Error:", error);
+            alert("CONNECTION ERROR. THE COMMAND CENTER IS UNREACHABLE.");
+        }
     });
-
-    const result = await response.json();
-    alert(result.message); // "Message received at McBen Energy Hub!"
-});
+}

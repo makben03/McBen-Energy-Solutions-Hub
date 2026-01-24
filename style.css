@@ -617,3 +617,63 @@ h2.section-title {
     .panel-info { border-right: none; border-bottom: 1px solid rgba(255, 180, 0, 0.1); }
 }
 
+/* ==========================================================
+   NEW: OUTDOOR FIELD MODE (HIGH CONTRAST OVERRIDES)
+   Ensures visibility in direct sunlight while keeping a modern architectural look.
+   ========================================================== */
+
+/* Overriding the dark background for high contrast */
+.industrial-bg.field-mode {
+    background-color: #FFFFFF !important;
+    background-image: radial-gradient(#d1d1d1 1px, transparent 1px) !important;
+    background-size: 30px 30px !important;
+}
+
+/* Enhancing the dashboard card for field use */
+.field-mode .glass-dashboard {
+    background: #FFFFFF !important;
+    border: 3px solid #121212 !important;
+    box-shadow: 15px 15px 0px var(--primary-gold) !important;
+    backdrop-filter: none !important;
+}
+
+/* Making all text deep black for sunlight readability */
+.field-mode .dash-title, 
+.field-mode .info-block p,
+.field-mode .field input,
+.field-mode .field textarea {
+    color: #121212 !important;
+    opacity: 1 !important;
+}
+
+.field-mode .info-block label,
+.field-mode .field .label {
+    color: #444 !important;
+    font-weight: 800;
+    background: #FFFFFF !important;
+}
+
+/* High contrast inputs */
+.field-mode .field input, 
+.field-mode .field textarea {
+    background: #F9F9F9 !important;
+    border: 2px solid #121212 !important;
+}
+
+/* High contrast command button */
+.field-mode .command-btn {
+    background: #121212 !important;
+    color: var(--primary-gold) !important;
+    border: none !important;
+}
+
+.field-mode .command-btn:hover {
+    background: var(--primary-gold) !important;
+    color: #121212 !important;
+}
+
+/* Fix for nav in field mode */
+.field-mode nav {
+    background: #121212 !important;
+    border-bottom: 3px solid var(--primary-gold) !important;
+}
